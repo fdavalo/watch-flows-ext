@@ -1,5 +1,5 @@
 import process from 'process';
-import {Watch} from './watch.js';
+import {Watch} from './watch.mjs';
 
 "use strict";
 

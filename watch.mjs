@@ -1,8 +1,8 @@
 import fs from 'fs';
 import process from 'process';
 import readline from 'readline';
-import {WsServer} from './wsserver.js';
-import {WsClient} from './wsclient.js';
+import {WsServer} from './wsserver.mjs';
+import {WsClient} from './wsclient.mjs';
   
 "use strict";
 
@@ -121,7 +121,7 @@ export class Watch {
 					    'name':name
 				    };
 			    }
-			    else (this.Ips[ip]['name'] != name) {
+			    else if (this.Ips[ip]['name'] != name) {
 				    this.Ips[ip]['type'] = 'pod';
 				    this.Ips[ip]['namespace'] = pod.metadata.namespace;
 				    this.Ips[ip]['pod'] = pod.metadata.name;
