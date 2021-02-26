@@ -3,5 +3,6 @@ COPY *.js package.json *.sh /opt/app-root/src
 WORKDIR /opt/app-root/src 
 RUN npm i
 USER root
-RUN yum install -y tcpdump
+RUN curl http://mirror.centos.org/centos/8/AppStream/x86_64/os/Packages/tcpdump-4.9.3-1.el8.x86_64.rpm -o tcpdump-4.9.3-1.el8.x86_64.rpm && \
+    rpm -i install tcpdump-4.9.3-1.el8.x86_64.rpm && /bin/rm -f tcpdump-4.9.3-1.el8.x86_64.rpm 
 CMD sh start.sh
